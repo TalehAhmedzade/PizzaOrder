@@ -1,0 +1,9 @@
+.header {
+  list-style: none;
+  display: flex;
+  padding: 3%;
+  background-color: black;
+  li{
+    padding-right: 20%;
+  }
+}
