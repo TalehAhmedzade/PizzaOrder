@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
-const Bucket = () => {
-  const [isVisibled, setIsVisibled] = useState(true);
+const Bucket = ({data}) => {
+  const [isVisibled, setIsVisibled] = useState(false);
   const handleClickButton = () => {
     setIsVisibled(!isVisibled);
+    console.log(data);
   };
   return (
     <div>
       <button onClick={handleClickButton}>Bucket</button>
-      {isVisibled && <p>Name: </p>}
-      {isVisibled && <p>Price</p>}
-      {isVisibled && <p>Count</p>}
+      {isVisibled && <p>Mebleg: {(data.reduce((accum,item)=>{return accum+item.price},0)).toFixed(2)}</p>}
+      {isVisibled && <p>Say: {data.length}</p>}
     </div>
   );
 };
